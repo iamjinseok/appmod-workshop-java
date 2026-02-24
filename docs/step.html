@@ -116,10 +116,13 @@
             .header { padding: 0.5rem 1rem; }
         }
     </style>
+    <link rel="stylesheet" href="light-theme.css">
+    <script src="theme-toggle.js"></script>
 </head>
 <body>
     <header class="header">
         <a href="index.html" class="header-brand">☕ App Modernization Workshop</a>
+        <button class="theme-toggle" onclick="toggleTheme()">☀️ Light</button>
         <div class="header-nav">
             <button id="prevBtn" onclick="navigateStep(-1)" disabled>← Prev</button>
             <button id="nextBtn" onclick="navigateStep(1)">Next →</button>
