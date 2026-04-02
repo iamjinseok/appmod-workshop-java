@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LSC44NDPLQ"></script>
@@ -11,7 +11,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Modernization with GitHub Copilot</title>
+    <title>Modernización de Aplicaciones con GitHub Copilot</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -20,29 +20,29 @@
     <link rel="alternate" hreflang="pt-BR" href="https://copilot-dev-days.github.io/appmod-workshop-java/pt_BR/">
     <link rel="alternate" hreflang="es" href="https://copilot-dev-days.github.io/appmod-workshop-java/es/">
     <link rel="alternate" hreflang="x-default" href="https://copilot-dev-days.github.io/appmod-workshop-java/">
-    <link rel="stylesheet" href="step.css">
-    <link rel="stylesheet" href="light-theme.css">
-    <script src="theme-toggle.js"></script>
+    <link rel="stylesheet" href="../step.css">
+    <link rel="stylesheet" href="../light-theme.css">
+    <script src="../theme-toggle.js"></script>
 </head>
 <body>
     <header class="header">
         <div class="header-content">
             <a href="index.html" class="header-brand">
                 <span class="brand-icon">☕</span>
-                <span class="header-title">App Modernization Workshop</span>
+                <span class="header-title">Taller de Modernización de Aplicaciones</span>
             </a>
             <div class="header-nav">
                 <div class="locale-picker" id="localePicker">
-                    <button type="button" class="locale-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">🌐</button>
-                    <ul role="listbox" aria-label="Language">
-                        <li role="option" data-locale="en" aria-selected="true" class="active">🇬🇧 English</li>
-                        <li role="option" data-locale="es" aria-selected="false">🇪🇸 Español</li>
+                    <button type="button" class="locale-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Seleccionar idioma">🌐</button>
+                    <ul role="listbox" aria-label="Idioma">
+                        <li role="option" data-locale="en" aria-selected="false">🇬🇧 English</li>
+                        <li role="option" data-locale="es" aria-selected="true" class="active">🇪🇸 Español</li>
                         <li role="option" data-locale="pt-BR" aria-selected="false">🇧🇷 Português (Brasil)</li>
                     </ul>
                 </div>
-                <button class="theme-toggle" onclick="toggleTheme()">☀️ Light</button>
-                <button class="nav-btn" id="prevBtn" onclick="navigate(-1)" disabled>← Prev</button>
-                <button class="nav-btn" id="nextBtn" onclick="navigate(1)">Next →</button>
+                <button class="theme-toggle" onclick="toggleTheme()">☀️ Claro</button>
+                <button class="nav-btn" id="prevBtn" onclick="navigate(-1)" disabled>← Anterior</button>
+                <button class="nav-btn" id="nextBtn" onclick="navigate(1)">Siguiente →</button>
             </div>
         </div>
     </header>
@@ -50,7 +50,7 @@
     <div class="layout">
         <aside class="sidebar">
             <div class="sidebar-section">
-                <div class="sidebar-title" id="sidebarTitle">Workshop Steps</div>
+                <div class="sidebar-title">Pasos del Taller</div>
                 <nav id="stepNav"></nav>
             </div>
         </aside>
@@ -58,7 +58,7 @@
         <main class="main">
             <div class="content">
                 <div id="markdownContent">
-                    <div class="loading">Loading content</div>
+                    <div class="loading">Cargando contenido</div>
                 </div>
                 <div class="nav-footer" id="navFooter"></div>
             </div>
@@ -66,36 +66,18 @@
     </div>
 
     <script>
-        const ideSteps = [
-            { id: '00-overview', file: 'workshop/00-overview.md', title: 'Workshop Overview', number: '📚' },
-            { id: '01-prerequisites', file: 'workshop/01-prerequisites.md', title: 'Prerequisites & Setup', number: '01' },
-            { id: '02-assess', file: 'workshop/02-assess.md', title: 'Assess Your Application', number: '02' },
-            { id: '03-upgrade', file: 'workshop/03-upgrade.md', title: 'Upgrade Runtime & Frameworks', number: '03' },
-            { id: '04-health-endpoints', file: 'workshop/04-health-endpoints.md', title: 'Health Endpoints', number: '04' },
-            { id: '05-containerize', file: 'workshop/05-containerize.md', title: 'Containerize Applications', number: '05' },
-            { id: 'prompts', file: 'PROMPTS.md', title: 'Copilot Prompts Guide', number: '📖' },
+        const steps = [
+            { id: '00-overview', file: 'workshop/es/00-overview.md', title: 'Descripción General del Taller', number: '📚' },
+            { id: '01-prerequisites', file: 'workshop/es/01-prerequisites.md', title: 'Requisitos Previos y Configuración', number: '01' },
+            { id: '02-assess', file: 'workshop/es/02-assess.md', title: 'Evalúa Tu Aplicación', number: '02' },
+            { id: '03-upgrade', file: 'workshop/es/03-upgrade.md', title: 'Actualizar Runtime y Frameworks', number: '03' },
+            { id: '04-health-endpoints', file: 'workshop/es/04-health-endpoints.md', title: 'Health Endpoints', number: '04' },
+            { id: '05-containerize', file: 'workshop/es/05-containerize.md', title: 'Containerizar Aplicaciones', number: '05' },
+            { id: 'prompts', file: 'PROMPTS.es.md', title: 'Guía de Prompts de Copilot', number: '📖' },
         ];
-
-        const cliSteps = [
-            { id: '00-overview', file: 'workshop-cli/00-overview.md', title: 'Workshop Overview', number: '📚' },
-            { id: '01-prerequisites', file: 'workshop-cli/01-prerequisites.md', title: 'Prerequisites & Setup', number: '01' },
-            { id: '02-assess', file: 'workshop-cli/02-assess.md', title: 'Start Copilot CLI', number: '02' },
-            { id: '03-upgrade', file: 'workshop-cli/03-upgrade.md', title: 'Upgrade Runtime & Frameworks', number: '03' },
-            { id: '04-health-endpoints', file: 'workshop-cli/04-health-endpoints.md', title: 'Health Endpoints', number: '04' },
-            { id: '05-containerize', file: 'workshop-cli/05-containerize.md', title: 'Containerize Applications', number: '05' },
-        ];
-
-        function getVariant() {
-            const params = new URLSearchParams(window.location.search);
-            return params.get('variant') === 'cli' ? 'cli' : 'ide';
-        }
-
-        const variant = getVariant();
-        const steps = variant === 'cli' ? cliSteps : ideSteps;
-        const variantParam = variant === 'cli' ? 'variant=cli&' : '';
 
         const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:';
-        const GITHUB_RAW_BASE = isLocal ? '../' : 'https://raw.githubusercontent.com/copilot-dev-days/appmod-workshop-java/main/';
+        const GITHUB_RAW_BASE = isLocal ? '../../' : 'https://raw.githubusercontent.com/copilot-dev-days/appmod-workshop-java/main/';
 
         let currentIndex = 0;
 
@@ -106,9 +88,8 @@
 
         function buildSidebar() {
             const nav = document.getElementById('stepNav');
-            document.getElementById('sidebarTitle').textContent = variant === 'cli' ? 'CLI Workshop Steps' : 'Workshop Steps';
             nav.innerHTML = steps.map((step, i) => `
-                <a href="?${variantParam}step=${step.id}" class="step-link ${i === currentIndex ? 'active' : ''}" data-index="${i}">
+                <a href="?step=${step.id}" class="step-link ${i === currentIndex ? 'active' : ''}" data-index="${i}">
                     <span class="step-number">${step.number}</span>
                     <span>${step.title}</span>
                 </a>
@@ -125,15 +106,15 @@
             const prev = currentIndex > 0 ? steps[currentIndex - 1] : null;
             const next = currentIndex < steps.length - 1 ? steps[currentIndex + 1] : null;
             footer.innerHTML = `
-                <a href="${prev ? '?' + variantParam + 'step=' + prev.id : '#'}" class="nav-footer-btn ${!prev ? 'disabled' : ''}">← ${prev ? prev.title : 'Previous'}</a>
-                <a href="${next ? '?' + variantParam + 'step=' + next.id : '#'}" class="nav-footer-btn ${!next ? 'disabled' : ''}">${next ? next.title : 'Next'} →</a>
+                <a href="${prev ? '?step=' + prev.id : '#'}" class="nav-footer-btn ${!prev ? 'disabled' : ''}">← ${prev ? prev.title : 'Anterior'}</a>
+                <a href="${next ? '?step=' + next.id : '#'}" class="nav-footer-btn ${!next ? 'disabled' : ''}">${next ? next.title : 'Siguiente'} →</a>
             `;
         }
 
         function navigate(direction) {
             const newIndex = currentIndex + direction;
             if (newIndex >= 0 && newIndex < steps.length) {
-                window.location.href = `?${variantParam}step=${steps[newIndex].id}`;
+                window.location.href = `?step=${steps[newIndex].id}`;
             }
         }
 
@@ -147,9 +128,18 @@
                 return `<blockquote style="border-left-color: ${color};"><p style="color: ${color};">${icon} ${type.toUpperCase()}</p><p>${cleanContent}</p></blockquote>\n`;
             });
 
-            md = md.replace(/\[([^\]]+)\]\((?:\.\/)?workshop\/(\d+)-([^)]+)\.md\)/g, function(match, text, num, slug) {
+            md = md.replace(/\[([^\]]+)\]\((?:\.\/)?workshop\/es\/(\d+)-([^)]+)\.md\)/g, function(match, text, num, slug) {
                 const stepId = num.replace(/^0+/, '0') + '-' + slug;
-                const found = steps.find(s => s.id === stepId || s.file === `workshop/${num}-${slug}.md`);
+                const found = steps.find(s => s.id === stepId || s.file === `workshop/es/${num}-${slug}.md`);
+                if (found) {
+                    return `[${text}](step.html?step=${found.id})`;
+                }
+                return match;
+            });
+
+            md = md.replace(/\[([^\]]+)\]\((?:\.\/)?(\d+)-([^)]+)\.md\)/g, function(match, text, num, slug) {
+                const stepId = num.replace(/^0+/, '0') + '-' + slug;
+                const found = steps.find(s => s.id === stepId);
                 if (found) {
                     return `[${text}](step.html?step=${found.id})`;
                 }
@@ -162,17 +152,17 @@
         async function loadStep(stepId) {
             const step = steps.find(s => s.id === stepId);
             if (!step) {
-                document.getElementById('markdownContent').innerHTML = '<p>Step not found.</p>';
+                document.getElementById('markdownContent').innerHTML = '<p>Paso no encontrado.</p>';
                 return;
             }
             currentIndex = steps.indexOf(step);
             buildSidebar();
             updateNavButtons();
             buildFooterNav();
-            document.title = `${step.title} - App Modernization with GitHub Copilot`;
+            document.title = `${step.title} - Modernización de Aplicaciones con GitHub Copilot`;
 
             const contentEl = document.getElementById('markdownContent');
-            contentEl.innerHTML = '<div class="loading">Loading content</div>';
+            contentEl.innerHTML = '<div class="loading">Cargando contenido</div>';
 
             try {
                 const url = GITHUB_RAW_BASE + step.file;
@@ -194,7 +184,7 @@
                 contentEl.innerHTML = `
                     <div class="markdown">
                         <h1>${step.title}</h1>
-                        <p>Could not load content. Please check the <a href="https://github.com/copilot-dev-days/appmod-workshop-java" target="_blank">GitHub repository</a> directly.</p>
+                        <p>No se pudo cargar el contenido. Por favor, consulta el <a href="https://github.com/copilot-dev-days/appmod-workshop-java" target="_blank">repositorio de GitHub</a> directamente.</p>
                         <p style="color: var(--text-secondary); font-size: 0.875rem;">Error: ${err.message}</p>
                     </div>`;
             }
@@ -207,6 +197,7 @@
 
         loadStep(getStepFromURL());
     </script>
+
     <script>
     (function(){
       var match=location.pathname.match(/\/(pt_BR|es)\//);

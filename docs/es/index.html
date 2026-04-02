@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LSC44NDPLQ"></script>
@@ -11,51 +11,50 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Modernization with GitHub Copilot</title>
+    <title>Modernización de Aplicaciones con GitHub Copilot</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <link rel="alternate" hreflang="en" href="https://copilot-dev-days.github.io/appmod-workshop-java/">
     <link rel="alternate" hreflang="pt-BR" href="https://copilot-dev-days.github.io/appmod-workshop-java/pt_BR/">
     <link rel="alternate" hreflang="es" href="https://copilot-dev-days.github.io/appmod-workshop-java/es/">
     <link rel="alternate" hreflang="x-default" href="https://copilot-dev-days.github.io/appmod-workshop-java/">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="light-theme.css">
-    <script src="theme-toggle.js"></script>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../light-theme.css">
+    <script src="../theme-toggle.js"></script>
 </head>
 <body>
     <div style="position:fixed;top:1rem;right:1rem;z-index:1000;display:flex;gap:0.5rem;align-items:center;">
         <div class="locale-picker" id="localePicker">
-            <button type="button" class="locale-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">🌐</button>
-            <ul role="listbox" aria-label="Language">
-                <li role="option" data-locale="en" aria-selected="true" class="active">🇬🇧 English</li>
-                <li role="option" data-locale="es" aria-selected="false">🇪🇸 Español</li>
+            <button type="button" class="locale-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Seleccionar idioma">🌐</button>
+            <ul role="listbox" aria-label="Idioma">
+                <li role="option" data-locale="en" aria-selected="false">🇬🇧 English</li>
+                <li role="option" data-locale="es" aria-selected="true" class="active">🇪🇸 Español</li>
                 <li role="option" data-locale="pt-BR" aria-selected="false">🇧🇷 Português (Brasil)</li>
             </ul>
         </div>
-        <button class="theme-toggle" onclick="toggleTheme()">☀️ Light</button>
+        <button class="theme-toggle" onclick="toggleTheme()">☀️ Claro</button>
     </div>
     <section class="hero">
         <div class="container">
-            <div class="hero-badge">☕ Java + Spring Boot Modernization</div>
-            <h1>App Modernization with GitHub Copilot</h1>
-            <p class="hero-subtitle">Modernize a legacy Java application using GitHub Copilot. Assess, upgrade frameworks, add health endpoints, and containerize — all with AI-powered assistance.</p>
+            <div class="hero-badge">☕ Modernización Java + Spring Boot</div>
+            <h1>Modernización de Aplicaciones con GitHub Copilot</h1>
+            <p class="hero-subtitle">Moderniza una aplicación Java heredada usando GitHub Copilot. Evalúa, actualiza frameworks, agrega endpoints de salud y containeriza — todo con asistencia de IA.</p>
             <div class="hero-cta">
-                <a href="step.html?step=00-overview" class="btn btn-primary">🚀 Start IDE Workshop</a>
-                <a href="step.html?variant=cli&step=00-overview" class="btn btn-primary">🖥️ Start CLI Workshop</a>
-                <a href="https://github.com/copilot-dev-days/appmod-workshop-java" class="btn btn-secondary" target="_blank">⭐ GitHub Repo</a>
+                <a href="step.html?step=00-overview" class="btn btn-primary">🚀 Iniciar Taller</a>
+                <a href="https://github.com/copilot-dev-days/appmod-workshop-java" class="btn btn-secondary" target="_blank">⭐ Repositorio GitHub</a>
             </div>
             <div class="stats">
                 <div class="stat">
                     <div class="stat-value">~60min</div>
-                    <div class="stat-label">Duration</div>
+                    <div class="stat-label">Duración</div>
                 </div>
                 <div class="stat">
                     <div class="stat-value">6</div>
-                    <div class="stat-label">Steps</div>
+                    <div class="stat-label">Pasos</div>
                 </div>
                 <div class="stat">
                     <div class="stat-value">~35min</div>
-                    <div class="stat-label">Hands-on</div>
+                    <div class="stat-label">Práctica</div>
                 </div>
             </div>
         </div>
@@ -63,27 +62,27 @@
 
     <section class="features">
         <div class="container">
-            <h2 class="section-title">What You'll Learn</h2>
+            <h2 class="section-title">Lo que Aprenderás</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">📋</div>
-                    <h3>Assessment</h3>
-                    <p>Evaluate your legacy codebase to identify modernization opportunities and create an upgrade plan.</p>
+                    <h3>Evaluación</h3>
+                    <p>Evalúa tu base de código heredada para identificar oportunidades de modernización y crear un plan de actualización.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">⬆️</div>
-                    <h3>Framework Upgrade</h3>
-                    <p>Upgrade from Java 8 to 21 and Spring Boot 2.x to 3.x with Copilot's guidance.</p>
+                    <h3>Actualización de Framework</h3>
+                    <p>Actualiza de Java 8 a 21 y Spring Boot 2.x a 3.x con la guía de Copilot.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🏥</div>
                     <h3>Health Endpoints</h3>
-                    <p>Add production-ready health check endpoints for cloud deployment readiness.</p>
+                    <p>Agrega endpoints de verificación de salud listos para producción y despliegue en la nube.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🐳</div>
-                    <h3>Containerization</h3>
-                    <p>Package your modernized app in containers ready for cloud-native deployment.</p>
+                    <h3>Containerización</h3>
+                    <p>Empaqueta tu aplicación modernizada en containers listos para despliegue cloud-native.</p>
                 </div>
             </div>
         </div>
@@ -91,37 +90,37 @@
 
     <section class="workshop">
         <div class="container">
-            <h2 class="section-title">IDE Workshop (VS Code / IntelliJ)</h2>
+            <h2 class="section-title">Pasos del Taller</h2>
             <div class="parts-list">
                 <a href="step.html?step=00-overview" class="part-card">
                     <div class="part-number">📚</div>
                     <div class="part-content">
-                        <h3>Workshop Overview</h3>
-                        <p>What you'll build, learn, and time estimates</p>
+                        <h3>Descripción General del Taller</h3>
+                        <p>Qué construirás, aprenderás y estimaciones de tiempo</p>
                     </div>
                     <span class="part-time">5 min</span>
                 </a>
                 <a href="step.html?step=01-prerequisites" class="part-card">
                     <div class="part-number">01</div>
                     <div class="part-content">
-                        <h3>Prerequisites & Setup</h3>
-                        <p>Install tools, clone the repo, configure extensions</p>
+                        <h3>Requisitos Previos y Configuración</h3>
+                        <p>Instala herramientas, clona el repositorio, configura extensiones</p>
                     </div>
                     <span class="part-time">5 min</span>
                 </a>
                 <a href="step.html?step=02-assess" class="part-card">
                     <div class="part-number">02</div>
                     <div class="part-content">
-                        <h3>Assess Your Application</h3>
-                        <p>Run the assessment and review the modernization report</p>
+                        <h3>Evalúa Tu Aplicación</h3>
+                        <p>Ejecuta la evaluación y revisa el informe de modernización</p>
                     </div>
                     <span class="part-time">5 min</span>
                 </a>
                 <a href="step.html?step=03-upgrade" class="part-card">
                     <div class="part-number">03</div>
                     <div class="part-content">
-                        <h3>Upgrade Runtime & Frameworks</h3>
-                        <p>Upgrade Java 8→21 and Spring Boot 2.x→3.x</p>
+                        <h3>Actualizar Runtime y Frameworks</h3>
+                        <p>Actualiza Java 8→21 y Spring Boot 2.x→3.x</p>
                     </div>
                     <span class="part-time">10 min</span>
                 </a>
@@ -129,80 +128,24 @@
                     <div class="part-number">04</div>
                     <div class="part-content">
                         <h3>Health Endpoints</h3>
-                        <p>Expose health endpoints with custom tasks</p>
+                        <p>Expón endpoints de salud con skills personalizados</p>
                     </div>
                     <span class="part-time">10 min</span>
                 </a>
                 <a href="step.html?step=05-containerize" class="part-card">
                     <div class="part-number">05</div>
                     <div class="part-content">
-                        <h3>Containerize Applications</h3>
-                        <p>Generate Dockerfiles and build container images</p>
+                        <h3>Containerizar Aplicaciones</h3>
+                        <p>Genera Dockerfiles y construye imágenes de container</p>
                     </div>
                     <span class="part-time">5 min</span>
                 </a>
                 <a href="step.html?step=prompts" class="part-card">
                     <div class="part-number">📖</div>
                     <div class="part-content">
-                        <h3>Copilot Prompts Guide</h3>
-                        <p>Reference guide with prompts used during development</p>
+                        <h3>Guía de Prompts de Copilot</h3>
+                        <p>Guía de referencia con prompts usados durante el desarrollo</p>
                     </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section class="workshop">
-        <div class="container">
-            <h2 class="section-title">CLI Workshop (Terminal / No IDE)</h2>
-            <div class="parts-list">
-                <a href="step.html?variant=cli&step=00-overview" class="part-card">
-                    <div class="part-number">📚</div>
-                    <div class="part-content">
-                        <h3>Workshop Overview</h3>
-                        <p>What you'll build, learn, and time estimates</p>
-                    </div>
-                    <span class="part-time">5 min</span>
-                </a>
-                <a href="step.html?variant=cli&step=01-prerequisites" class="part-card">
-                    <div class="part-number">01</div>
-                    <div class="part-content">
-                        <h3>Prerequisites & Setup</h3>
-                        <p>Install Copilot CLI, Node.js 22+, and required tools</p>
-                    </div>
-                    <span class="part-time">5 min</span>
-                </a>
-                <a href="step.html?variant=cli&step=02-assess" class="part-card">
-                    <div class="part-number">02</div>
-                    <div class="part-content">
-                        <h3>Start Copilot CLI</h3>
-                        <p>Launch Copilot CLI and add the MCP modernization server</p>
-                    </div>
-                    <span class="part-time">5 min</span>
-                </a>
-                <a href="step.html?variant=cli&step=03-upgrade" class="part-card">
-                    <div class="part-number">03</div>
-                    <div class="part-content">
-                        <h3>Upgrade Runtime & Frameworks</h3>
-                        <p>Upgrade Java 8→21 and Spring Boot 2.x→3.x via natural language</p>
-                    </div>
-                    <span class="part-time">10 min</span>
-                </a>
-                <a href="step.html?variant=cli&step=04-health-endpoints" class="part-card">
-                    <div class="part-number">04</div>
-                    <div class="part-content">
-                        <h3>Health Endpoints</h3>
-                        <p>Add health endpoints using a natural language prompt</p>
-                    </div>
-                    <span class="part-time">10 min</span>
-                </a>
-                <a href="step.html?variant=cli&step=05-containerize" class="part-card">
-                    <div class="part-number">05</div>
-                    <div class="part-content">
-                        <h3>Containerize Applications</h3>
-                        <p>Generate Dockerfiles via natural language prompt</p>
-                    </div>
-                    <span class="part-time">5 min</span>
                 </a>
             </div>
         </div>
@@ -210,11 +153,11 @@
 
     <section class="prereqs">
         <div class="container">
-            <h2 class="section-title">Prerequisites</h2>
+            <h2 class="section-title">Requisitos Previos</h2>
             <div class="prereqs-grid">
                 <div class="prereq-item">
                     <span class="prereq-check">✓</span>
-                    <span>VS Code or IDE</span>
+                    <span>VS Code o IDE</span>
                 </div>
                 <div class="prereq-item">
                     <span class="prereq-check">✓</span>
@@ -222,11 +165,11 @@
                 </div>
                 <div class="prereq-item">
                     <span class="prereq-check">✓</span>
-                    <span>Java 8+ & Maven</span>
+                    <span>Java 8+ y Maven</span>
                 </div>
                 <div class="prereq-item">
                     <span class="prereq-check">✓</span>
-                    <span>Docker installed</span>
+                    <span>Docker instalado</span>
                 </div>
             </div>
         </div>
@@ -235,13 +178,14 @@
     <footer>
         <div class="container">
             <div class="footer-links">
-                <a href="https://github.com/copilot-dev-days/appmod-workshop-java" target="_blank">GitHub Repository</a>
-                <a href="https://docs.github.com/en/copilot" target="_blank">Copilot Docs</a>
+                <a href="https://github.com/copilot-dev-days/appmod-workshop-java" target="_blank">Repositorio GitHub</a>
+                <a href="https://docs.github.com/en/copilot" target="_blank">Docs de Copilot</a>
                 <a href="https://github.com/github/awesome-copilot" target="_blank">Awesome Copilot</a>
             </div>
-            <p class="footer-credit">Built with 💜 by the GitHub Copilot Team</p>
+            <p class="footer-credit">Hecho con 💜 por el equipo de GitHub Copilot</p>
         </div>
     </footer>
+
     <script>
     (function(){
       var match=location.pathname.match(/\/(pt_BR|es)\//);
