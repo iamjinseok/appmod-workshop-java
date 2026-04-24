@@ -22,11 +22,13 @@ RUN apt-get update \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
         gh \
+        git-lfs \
         maven \
         nodejs \
         temurin-8-jdk \
         temurin-21-jdk \
     && npm install -g npm@latest \
+    && git lfs install \
     && JAVA8_HOME="$(dirname "$(dirname "$(dpkg -L temurin-8-jdk | grep '/bin/javac$' | head -n 1)")")" \
     && JAVA21_HOME="$(dirname "$(dirname "$(dpkg -L temurin-21-jdk | grep '/bin/javac$' | head -n 1)")")" \
     && ln -s "$JAVA8_HOME" /usr/local/share/java8 \
