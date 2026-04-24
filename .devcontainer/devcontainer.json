@@ -1,0 +1,40 @@
+{
+  "name": "appmod-workshop-java",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "remoteUser": "vscode",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "java.configuration.runtimes": [
+          {
+            "name": "JavaSE-1.8",
+            "path": "/usr/local/share/java8",
+            "default": false
+          },
+          {
+            "name": "JavaSE-21",
+            "path": "/usr/local/share/java21",
+            "default": true
+          }
+        ],
+        "maven.terminal.useJavaHome": true
+      },
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "vmware.vscode-boot-dev-pack",
+        "ms-azuretools.vscode-docker",
+        "github.copilot",
+        "github.copilot-chat"
+      ]
+    }
+  },
+  "postCreateCommand": "java -version && mvn -version && node --version && npm --version && curl -fsSL https://gh.io/copilot-install | bash && gh copilot --version",
+  "containerEnv": {
+    "JAVA_HOME": "/usr/local/share/java21",
+    "JAVA8_HOME": "/usr/local/share/java8",
+    "JAVA21_HOME": "/usr/local/share/java21"
+  }
+}
